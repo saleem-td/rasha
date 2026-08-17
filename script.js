@@ -1,0 +1,3 @@
+const menu=document.querySelector('.menu'),links=document.querySelector('.links');menu?.addEventListener('click',()=>links.classList.toggle('open'));document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.querySelector('.progress').style.width=(scrollY/h*100)+'%'});
